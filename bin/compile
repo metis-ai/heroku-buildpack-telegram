@@ -34,7 +34,7 @@ echo "Downloading Auth file" | indent
 cd $HOME
 mkdir .telegram-cli
 cd .telegram-cli
-echo cat $ENV_DIR/AUTH_URL
+cat $ENV_DIR/AUTH_URL
 curl -O --silent `cat $ENV_DIR/AUTH_URL`
 
 echo "exporting PATH and LIBRARY_PATH" | indent
