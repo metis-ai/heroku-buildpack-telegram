@@ -13,19 +13,14 @@ VENDOR_DIR="vendor"
 
 echo "-----> Install telegram"
 
-# DOWNLOAD_URL="http://github.com/vysheng/tg/archive/1.0.5.1.tar.gz"
-# echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
-
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
-# curl -L --silent $DOWNLOAD_URL | tar xz
 git clone --recursive https://github.com/vysheng/tg.git && cd tg
 
 echo "Build telegram-cli" | indent
 cd tg
 echo "Configure telegram-cli" | indent
-# ./configure --disable-liblua
 ./configure
 echo "Make telegram-cli" | indent
 make
@@ -34,7 +29,6 @@ echo "Downloading Auth file" | indent
 cd $HOME
 mkdir .telegram-cli
 cd .telegram-cli
-cat $ENV_DIR/AUTH_URL
 curl -O --silent `cat $ENV_DIR/AUTH_URL`
 
 echo "exporting PATH and LIBRARY_PATH" | indent
