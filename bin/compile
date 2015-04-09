@@ -26,8 +26,8 @@ echo "Make telegram-cli" | indent
 make
 
 echo "Downloading Auth file" | indent
-cd $HOME
-mkdir .telegram-cli && cd .telegram-cli
+cd $BUILD_DIR
+mkdir -p .telegram-cli && cd .telegram-cli
 curl -O --silent `cat $ENV_DIR/AUTH_URL`
 
 echo "exporting PATH and LIBRARY_PATH" | indent
