@@ -16,7 +16,7 @@ echo "-----> Install telegram"
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
-git clone --recursive https://github.com/vysheng/tg.git && cd tg
+git clone --recursive https://github.com/vysheng/tg.git
 
 echo "Build telegram-cli" | indent
 cd tg
@@ -27,8 +27,7 @@ make
 
 echo "Downloading Auth file" | indent
 cd $HOME
-mkdir .telegram-cli
-cd .telegram-cli
+mkdir .telegram-cli && cd .telegram-cli
 curl -O --silent `cat $ENV_DIR/AUTH_URL`
 
 echo "exporting PATH and LIBRARY_PATH" | indent
