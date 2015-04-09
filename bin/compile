@@ -21,7 +21,7 @@ git clone --recursive https://github.com/vysheng/tg.git && cd tg
 echo "Build telegram-cli" | indent
 cd tg
 echo "Configure telegram-cli" | indent
-./configure CFLAGS="-I/app/.apt/usr/include/lua5.2 -I/app/.apt/usr/include/x86_64-linux-gnu"
+./configure CFLAGS="-I$INCLUDE_PATH/lua5.2 -I$INCLUDE_PATH/x86_64-linux-gnu"
 echo "Make telegram-cli" | indent
 make
 
