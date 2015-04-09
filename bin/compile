@@ -36,3 +36,7 @@ mkdir -p $(dirname $PROFILE_PATH)
 echo ''
 echo 'export PATH="$PATH:$HOME/vendor/tg/bin"' >> $PROFILE_PATH
 echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/vendor/tg/bin"' >> $PROFILE_PATH
+echo '# Lua packages' >> $PROFILE_PATH
+echo 'export LUA_CPATH="./?.so;/app/.apt/usr/lib/x86_64-linux-gnu/lua/5.2/?.so"' >> $PROFILE_PATH
+echo 'export LUA_PATH="./?.lua;/app/node_modules/hubot-tg/?.lua;/app/.apt/usr/share/lua/5.2/?.lua;/app/packages/share/lua/5.2/?/init.lua"'>> $PROFILE_PATH
+
