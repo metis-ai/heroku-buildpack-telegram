@@ -21,7 +21,7 @@ git clone --recursive https://github.com/vysheng/tg.git
 echo "Build telegram-cli" | indent
 cd tg
 echo "Configure telegram-cli" | indent
-./configure --disable-liblua # CFLAGS="-I$BUILD_DIR/.apt/usr/include/lua5.2 -I$BUILD_DIR/.apt/usr/include/x86_64-linux-gnu"
+./configure CFLAGS="-I$BUILD_DIR/.apt/usr/include/lua5.2 -I$BUILD_DIR/.apt/usr/include/x86_64-linux-gnu"
 echo "Make telegram-cli" | indent
 make
 
